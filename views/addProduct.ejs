@@ -1,0 +1,35 @@
+<%- include("partials/upper") %>
+
+<div class="container">
+
+<form action="/addProduct" method="post" enctype="multipart/form-data">
+
+<div class="mb-3">
+    <label for="pName" class="form-label">Product Name</label>
+    <input type="text" name="pName" id="" placeholder="Product Name" class="form-control">
+    
+</div>
+<div class="mb-3">
+    <label for="pPrice" class="form-label">Product Price (Rs.)</label>
+    <input type="number" name="pPrice" id="" placeholder="Product Price" class="form-control">
+    
+</div>
+<div class="mb-3">
+    <label for="pImage" class="form-label">Product Image</label>
+    <br>
+    <input name= "pImage" type="file" src="" alt="product image" style="color: blanchedalmond;background-color: cornflowerblue;">
+    
+</div>
+<div class="mb-3">
+    <label for="description" class="form-label">Product Description To be Added</label>
+    <textarea name="description" class="form-control" id="" cols="30" rows="5" placeholder="Product Description"></textarea>
+    
+</div>  
+<div class="mb-3">
+    <input type="submit" class="btn btn-primary" value="Add to File">
+</div>
+
+</form>
+</div>
+<a href="/home">Go To Home Page</a>
+<%- include("partials/lower") %>

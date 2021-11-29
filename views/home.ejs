@@ -1,0 +1,34 @@
+<%- include("partials/upper") %>
+
+
+    <%- include("partials/header", { user: user }) %>
+
+    <h1>
+      welcome here 
+    </h1>
+<!--if we have product then show here-->
+    <% if(isDiv){%>
+    <div id="imgDiv" class="containar">
+     <%m=m %>
+     
+     <%if(m>isDiv.length) m=isDiv.length%>
+    <% for(i=0;i<m;i++){ %>
+      <h1><%=isDiv[i].pName%></h1>
+      <img src="<%=isDiv[i].pImage%>" alt="no pImage%" style="width:150px;height: 100px ;" />
+      <%- include("partials/modal",{pImage:isDiv[i].pImage,pName:isDiv[i].pName,pPrice:isDiv[i].pPrice,description:isDiv[i].description}) %>
+      
+      
+      <button type="submit" id=i class="btn btn-primary Margin" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Description</button>
+    
+      <!--modal-->
+      
+      <%}%>
+ 
+
+      <form action="/loadmore" method="post">
+        <input type="number"value=<%=m%> name="value" style="display: none;">
+        <button class="btn btn-primary" type="submit" id=m> Load more</button>
+      </form>
+    </div>
+    <%}%>
+  <%- include("partials/lower") %>
